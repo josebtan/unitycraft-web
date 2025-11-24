@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UnityCraft | Dashboard</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Fuente estilo retro -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ====================================================
+     HEADER
+==================================================== -->
+<header>
+  <div class="container header-flex">
+
+    <!-- Logo centrado en móvil -->
+    <a href="#home" class="logo">
+      <img src="assets/name.png" alt="UnityCraft Name" class="name-image" />
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="menu-toggle" aria-label="Abrir menú">
+      <span class="hamburger-icon">&#9776;</span>
+    </button>
+
+    <!-- Navegación -->
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#tutoriales">Tutoriales</a></li>
+        <li><a href="#stabs">Stabs</a></li>
+        <li><a href="#servidor">Servidor</a></li>
+        <li><a href="#tienda">Tienda</a></li>
+        <li><a href="#redes">Redes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ====================================================
+     HERO ROTATOR
+==================================================== -->
+<section id="home" class="hero">
+  <div class="overlay"></div>
+  <div class="hero-content container">
+    <h1>UnityCraft</h1>
+    <p>Mas que un servidor. Una comunidad</p>
+  </div>
+</section>
+
+<!-- ====================================================
+     INICIO
+==================================================== -->
+<section id="inicio" class="info container">
+  <h2>¿Qué es UnityCraft?</h2>
+  <p>
+    UnityCraft es un servidor Minecraft enfocado en la inmersión, la comunidad  
+    y la creatividad. Únete para explorar mazmorras, aprender mecánicas únicas  
+    y disfrutar de eventos semanales.
+  </p>
+</section>
+
+<!-- ====================================================
+     TUTORIALES (MEJORADOS)
+==================================================== -->
+<section id="tutoriales" class="tutoriales container">
+  <h2>Tutoriales</h2>
+
+  <div class="cards tutorial-cards">
+
+    <!-- =======================
+         Card 1
+    ======================== -->
+    <div class="card tutorial-card">
+      <h3>Mecánica de Clanes</h3>
+      <p class="summary">Aprende a crear y gestionar tu propio clan.</p>
+
+      <!-- Contenido oculto hasta el clic -->
+      <div class="details">
+        <h4>Pasos para crear un clan</h4>
+        <ol>
+          <li>Ejecuta <code>/clan crear &lt;nombre&gt;</code>.</li>
+          <li>Invita miembros con <code>/clan invitar &lt;jugador&gt;</code>.</li>
+          <li>Configura rangos desde el menú interactivo.</li>
+        </ol>
+        <p>Consejo: la comunicación es clave para vencer en mazmorras.</p>
+      </div>
+    </div>
+
+    <!-- =======================
+         Card 2
+    ======================== -->
+    <div class="card tutorial-card">
+      <h3>Sistema de Economía</h3>
+      <p class="summary">Descubre cómo funciona nuestra economía interna.</p>
+
+      <div class="details">
+        <h4>Cómo ganar monedas</h4>
+        <ol>
+          <li>Mina bloques raros dentro de mazmorras.</li>
+          <li>Completa misiones diarias usando <code>/misiones</code>.</li>
+          <li>Vende tus objetos en el NPC “Mercader”.</li>
+        </ol>
+        <p>Tip: los eventos semanales otorgan recompensas adicionales.</p>
+      </div>
+    </div>
+
+    <!-- =======================
+         Card 3
+    ======================== -->
+    <div class="card tutorial-card">
+      <h3>Eventos de Guerra</h3>
+      <p class="summary">Aprende la estrategia básica para las guerras.</p>
+
+      <div class="details">
+        <h4>Estrategia recomendada</h4>
+        <ol>
+          <li>Crea un equipo de 4 jugadores con roles definidos.</li>
+          <li>Asigna líder, tanque, asesino y sanador.</li>
+          <li>Preparen pociones y bloques defensivos.</li>
+        </ol>
+        <p>Una buena coordinación maximiza tus posibilidades de victoria.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+     STATS
+==================================================== -->
+<section id="stabs" class="stats container">
+  <h2>Estadísticas</h2>
+  <ul class="stats-list">
+    <li>Jugadores Online: <strong>120</strong></li>
+    <li>Uptime: <strong>99.9%</strong></li>
+    <li>TPS Promedio: <strong>19.8</strong></li>
+    <li>Total de Muertes: <strong>8,432</strong></li>
+  </ul>
+</section>
+
+<!-- ====================================================
+     CONEXIONES
+==================================================== -->
+<section id="servidor" class="connect container">
+  <h2>Conéctate Ahora</h2>
+  <p>IP Java: <code>unity.holy.gg</code></p>
+  <p>IP Bedrock: <code>na6.holy.gg:26143</code></p>
+</section>
+
+<!-- ====================================================
+     TIENDA
+==================================================== -->
+<section id="tienda" class="store container">
+  <h2>Tienda de Cosméticos</h2>
+  <div class="cards store-cards">
+
+    <div class="card store-card">
+      <img src="assets/Alas.png" alt="Pack de Alas" class="store-img" />
+      <h3>Pack de Alas</h3>
+      <p>Da un toque épico a tu personaje.</p>
+    </div>
+
+    <div class="card store-card">
+      <img src="assets/Holom.png" alt="Hologramas" class="store-img" />
+      <h3>Hologramas</h3>
+      <p>Personaliza tu spawn con hologramas únicos.</p>
+    </div>
+
+    <div class="card store-card">
+      <img src="assets/Emotes.jpg" alt="Emotes" class="store-img" />
+      <h3>Emotes</h3>
+      <p>Muestra gestos animados en el chat.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ====================================================
+     REDES SOCIALES
+==================================================== -->
+<section id="redes" class="social container">
+  <h2>Síguenos y Contáctanos</h2>
+  <ul class="social-list">
+    <li><a href="#" target="_blank">Twitter</a></li>
+    <li><a href="#" target="_blank">Facebook</a></li>
+    <li><a href="#" target="_blank">Instagram</a></li>
+    <li><a href="mailto:soporte@unitycraft.mx">Correo</a></li>
+  </ul>
+</section>
+
+<!-- ====================================================
+     FOOTER
+==================================================== -->
+<footer>
+  <p>Todos los derechos reservados.<br>
+    &copy; 2025 UnityCraft. </p>
+</footer>
+
+<!-- Script principal -->
+<script src="js/scripts.js" defer></script>
+
+<!-- Modal para Tutoriales -->
+<div id="tutorial-modal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Cerrar">&times;</button>
+    <h3 id="modal-title"></h3>
+    <div id="modal-body" class="modal-body"></div>
+  </div>
+</div>
+
+</body>
+</html>

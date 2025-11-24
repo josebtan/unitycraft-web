@@ -1,0 +1,446 @@
+/* ============================================================
+   css/style.css - UnityCraft (CORREGIDO y ORGANIZADO)
+   - Listas reparadas
+   - Tarjetas optimizadas
+   - Imágenes de tienda ajustadas
+   - Responsive para tarjetas activado a 950px
+============================================================ */
+
+/* ==========================
+   VARIABLES GLOBALES
+========================== */
+:root {
+  --bg-light:       #1f1f1f;
+  --section-bg:     #1f1f1f;
+  --text-primary:   #a5a5a5;
+  --text-secondary: #cfcfcf;
+  --border-soft:    #3a3a3a;
+
+  --btn-primary:    #4a90e2;
+  --btn-secondary:  #33917d;
+  --hover-accent:   #f5a623;
+
+  --card-bg:        #252525;
+  --card-hover:     #2d2d2d;
+
+  --transition-fast: 0.22s ease;
+  --font-retro: 'Press Start 2P', monospace;
+}
+
+/* ==========================
+   RESET CONTROLADO
+========================== */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* Restaurar comportamiento natural de listas */
+ol, ul {
+  list-style-position: outside;
+  list-style-type: initial;
+}
+
+/* ==========================
+   BODY
+========================== */
+body {
+  background: var(--bg-light);
+  color: var(--text-primary);
+  font-family: var(--font-retro);
+  line-height: 1.4;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================
+   HEADER
+========================== */
+header {
+  background: rgba(51, 51, 51, 0.88);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* botón menú móvil */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+/* ==========================
+   NAV
+========================== */
+.nav-menu { display: flex; }
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-menu a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.nav-menu a:hover { color: var(--hover-accent); }
+
+/* ==========================
+   RESPONSIVE <768px
+========================== */
+@media (max-width: 768px) {
+
+  .header-flex {
+    justify-content: center;
+    position: relative;
+  }
+
+  .logo { margin: 0 auto; }
+  .logo img { height: 40px; }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--section-bg);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    padding: 1rem 0;
+  }
+
+  .nav-menu.open { display: block; }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+/* ==========================
+   SECCIONES GENERALES
+========================== */
+.info,
+.tutoriales,
+.stats,
+.connect,
+.store,
+.social {
+  padding: 4rem 0;
+  background: var(--section-bg);
+  text-align: center;
+}
+
+.info h2,
+.tutoriales h2,
+.stats h2,
+.connect h2,
+.store h2,
+.social h2 {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   HERO
+========================== */
+.hero {
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  text-align: center;
+}
+
+/* ==========================
+   BOTONES
+========================== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+  color: #fff;
+}
+
+.btn-primary { background: var(--btn-primary); }
+.btn-primary:hover { background: var(--hover-accent); }
+
+.btn-secondary { background: var(--btn-secondary); }
+.btn-secondary:hover { background: var(--hover-accent); }
+
+/* ==========================
+   ESTADÍSTICAS
+========================== */
+.stats-list {
+  list-style-type: disc !important;
+  display: inline-block;
+  text-align: left;
+  padding-left: 1.5rem !important;
+}
+
+.stats-list li {
+  display: list-item !important;
+  margin: 0.4rem 0;
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   TARJETAS GENERALES
+========================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 1rem;
+  transition: 0.22s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  background: var(--card-hover);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.35);
+}
+
+.card h3 {
+  margin-bottom: 0.6rem;
+  color: var(--text-secondary);
+}
+
+/* FIX para listas dentro de tutoriales */
+.card .details ol,
+.card .details ul {
+  display: block !important;
+  margin: 0.6rem 0 0.6rem 1.6rem !important;
+  list-style-position: outside !important;
+  color: var(--text-secondary);
+}
+
+/* ==========================
+   TARJETAS TUTORIALES
+========================== */
+.tutorial-card .summary {
+  text-align: center;
+  margin-bottom: 1rem;
+  opacity: .95;
+}
+
+.tutorial-card .details {
+  display: none;
+  border-top: 1px solid var(--border-soft);
+  padding-top: 0.8rem;
+  animation: fadeInUp 0.18s ease;
+}
+
+.card.active .details { display: block; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================
+   MODAL
+========================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal.open { display: flex; }
+
+.modal-content {
+  background: var(--section-bg);
+  width: 100%;
+  max-width: 660px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+#modal-title {
+  padding: 1rem 1.4rem;
+  border-bottom: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+}
+
+.modal-body {
+  padding: 1.2rem 1.4rem;
+  max-height: 72vh;
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+/* ==========================
+   SOCIAL
+========================== */
+.social-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.social-list a:hover {
+  color: var(--hover-accent);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+  background: var(--section-bg);
+  padding: 1rem 0;
+  text-align: center;
+  border-top: 1px solid var(--border-soft);
+  color: var(--text-secondary);
+  font-size: 0.45rem;
+}
+
+/* ==========================
+   TIENDA - TARJETAS CON IMÁGENES
+========================== */
+.store-card {
+  text-align: center;
+  padding: 1rem 1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   cursor: default !important;
+}
+
+/* Imagen ajustada al tamaño de la tarjeta */
+.store-img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+  background: #1a1a1a;
+  border-radius: 6px;
+  padding: 0.5rem;
+  transition: transform 0.25s ease;
+}
+
+.store-card:hover .store-img {
+  transform: scale(1.05);
+}
+
+/* ==========================
+   RESPONSIVE PARA TARJETAS (950px)
+========================== */
+@media (max-width: 950px) {
+
+  .cards {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .card {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  .store-img {
+    max-height: 160px;
+  }
+
+  .card h3 { font-size: 1rem; }
+  .tutorial-card .summary { font-size: .9rem; }
+  .tutorial-card .details { font-size: .9rem; }
+}
+
+/* ==========================
+   FIN DEL ARCHIVO
+========================== */
