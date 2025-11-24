@@ -1,9 +1,9 @@
 /* ============================================================
    css/style.css - UnityCraft (CORREGIDO y ORGANIZADO)
-   - Listas reparadas
+   - Listas reparadas (OL numéricas funcionando)
    - Tarjetas optimizadas
    - Imágenes de tienda ajustadas
-   - Responsive para tarjetas activado a 950px
+   - Responsive de tarjetas a 950px
 ============================================================ */
 
 /* ==========================
@@ -280,13 +280,22 @@ header {
   color: var(--text-secondary);
 }
 
-/* FIX para listas dentro de tutoriales */
-.card .details ol,
-.card .details ul {
-  display: block !important;
-  margin: 0.6rem 0 0.6rem 1.6rem !important;
-  list-style-position: outside !important;
-  color: var(--text-secondary);
+/* ==========================
+   FIX LISTAS EN TUTORIALES
+========================== */
+
+/* OL = siempre números */
+.tutorial-card .details ol,
+.modal-body ol {
+  list-style-type: decimal !important;
+  margin-left: 1.6rem !important;
+}
+
+/* UL = puntos */
+.tutorial-card .details ul,
+.modal-body ul {
+  list-style-type: disc !important;
+  margin-left: 1.6rem !important;
 }
 
 /* ==========================
@@ -397,10 +406,9 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-   cursor: default !important;
+  cursor: default !important; /* solo quitar mano */
 }
 
-/* Imagen ajustada al tamaño de la tarjeta */
 .store-img {
   width: 100%;
   height: auto;
